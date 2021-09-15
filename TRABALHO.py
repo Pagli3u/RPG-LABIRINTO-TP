@@ -1,118 +1,137 @@
 import random
 import sys
 
-j=1
+sala=1
 
-h=7
-
-z=j
+jogadas=0
 
 caminhos = [1,2,3,4,5]
 
-while (j != 6) and (j!= 9):
+while (sala != 6) and (sala!= 9) and (sala!=10):
         
-        print("Você esta na sala:", j)
+        print("Você esta na sala:", sala)
         print("[1] - Caminho Vermelho\n[2] - Caminho Preto")
-        print(h)
         caminho = int(input())
 
         if (caminho == 1):
-            j=j+1
+            jogadas=jogadas+1
+            sala=sala+1
         
         elif (caminho == 2):
-            h=h-1
-            j=j+2
-if j == 9:
-    print("Você esta na sala:", j)
-    print("https://www.youtube.com/watch?v=SC4xMk98Pdc")
+            jogadas=jogadas+1
+            sala=sala+2
+
+if sala == 9:
+    print("Você esta na sala:", sala)
+    print("https://youtu.be/SC4xMk98Pdc?t=35")
     sys.exit()           
 
-if j==6:
-    print("Você esta na sala:", j)
+if sala==6:
+    print("Você esta na sala:", sala)
     print("[2] - Caminho Preto")
     caminho = int(input())
     while (caminho != 2):
         
         if (caminho == 2):
-            h=h-1
-            j=j+2
+            jogadas=jogadas+1
+            sala=sala+2
 
         elif (caminho == 1):
             print("Você não pode ir para este lado, só existem paredes cobertas com musgo!!")
             caminho = int(input())
-    j=j+2
-    h=h-1
-print("Você esta na sala:", j)
+    sala=sala+2
+    jogadas=jogadas+1
+
+if sala==10:
+    def selectRandom(caminhos):
+        return random.choice(caminhos)
+    sala=selectRandom(caminhos)
+    print("Seus heróis foram teleportados para a sala", sala)
+
+if jogadas>=7:
+    print("Seus heróis ficaram presos na sala", sala,"!!")
+    sys.exit()
+    
+print("Você esta na sala:", sala)
 print("[1] - Caminho Vermelho\n[2] - Caminho Preto")
 caminho = int(input())
 
 if caminho == 1:
-    h=h-1
-    j=j+1
+    jogadas=jogadas+1
+    sala=sala+1
 
 if caminho == 2:
-    h=h-1
-    j=j+2
+    jogadas=jogadas+1
+    sala=sala+2
 
-if j==9:
-    print("Você esta na sala:", j)
-    print("https://www.youtube.com/watch?v=SC4xMk98Pdc")
+if sala==9:
+    print("Você esta na sala:", sala)
+    print("https://youtu.be/SC4xMk98Pdc?t=35")
     sys.exit()
     
-if j==10:
+if sala==10:
     def selectRandom(caminhos):
         return random.choice(caminhos)
-    j=selectRandom(caminhos)
+    sala=selectRandom(caminhos)
+    print("Seus heróis foram teleportados para a sala", sala)
 
-if h!= 0:
-    while (h!=0) and (j != 6):
+if jogadas>=7:
+    while (jogadas>=7) and (sala != 6) and (sala != 9) and (sala != 10):
         
-        print("Você esta na sala:", j)
+        print("Você esta na sala:", sala)
         print("[1] - Caminho Vermelho\n[2] - Caminho Preto")
-        print(h)
         caminho = int(input())
 
         if (caminho == 1):
-            h=h-1
-            j=j+1
+            jogadas=jogadas+1
+            sala=sala+1
             
         elif (caminho == 2):
-            h=h-1
-            j=j+2
+            jogadas=jogadas+1
+            sala=sala+2
 
-if j==6 and h!=0:
-    print("Você esta na sala:", j)
-    print("[2] - Caminho Preto")
-    caminho = int(input())
-    h=h-1
-    j=j+2
-
-if h==0:
-    print("Seus heróis ficaram presos na sala", j,"!!")
-    sys.exit()
-
-if j==10:
+if sala==10:
     def selectRandom(caminhos):
         return random.choice(caminhos)
-    j=selectRandom(caminhos)
+    sala=selectRandom(caminhos)
+    print("Seus heróis foram teleportados para a sala", sala)
+    
+if sala==6 and jogadas>=7:
+    print("Você esta na sala:", sala)
+    print("[2] - Caminho Preto")
+    caminho = int(input())
+    jogadas=jogadas+1
+    sala=sala+2
+
+if sala==10:
+    def selectRandom(caminhos):
+        return random.choice(caminhos)
+    sala=selectRandom(caminhos)
+    print("Seus heróis foram teleportados para a sala", sala)
+
+if sala==9:
+    print("Você esta na sala:", sala)
+    print("https://youtu.be/SC4xMk98Pdc?t=35")
+    sys.exit()
+
+if jogadas>=7:
+    print("Seus heróis ficaram presos na sala", sala,"!!")
+    sys.exit()
 
 else:
-    print("Você esta na sala:", j)
+    print("Você esta na sala:", sala)
     print("[1] - Caminho Vermelho\n[2] - Caminho Preto")
     caminho = int(input())
 
     if caminho == 1:
-        h=h-1
-        j=j+1
+        jogadas=jogadas+1
+        sala=sala+1
 
     if caminho == 2:
-        h=h-1
-        j=j+2
+        jogadas=jogadas+1
+        sala=sala+2
 
-    if j==9:
-        print("Você esta na sala:", j)
-        print("https://www.youtube.com/watch?v=SC4xMk98Pdc")
+    if sala==9:
+        print("Você esta na sala:", sala)
+        print("https://youtu.be/SC4xMk98Pdc?t=35")
         sys.exit()
-
-
-    
